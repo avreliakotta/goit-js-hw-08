@@ -6,15 +6,8 @@ const player = new VimeoPlayer(iframe, {
   width: 640,
   height: 360,
   url: 'https://player.vimeo.com/video/236203659',
+  autoplay: true,
 });
-player
-  .play()
-  .then(() => {
-    console.log('Video started playing');
-  })
-  .catch(error => {
-    console.error('Error playing video:', error);
-  });
 
 player.on(
   'timeupdate',
@@ -33,9 +26,4 @@ function getSavedCurrentTime() {
   }
 }
 
-player
-  .setCurrentTime(getSavedCurrentTime())
-  .then(() => {})
-  .catch(error => {
-    console.error('Error setting currentTime:', error);
-  });
+player.setCurrentTime(getSavedCurrentTime());
