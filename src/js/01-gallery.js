@@ -1,7 +1,7 @@
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-import { galleryItems } from "./gallery-items.js";
+import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 function createGalleryItems(arr) {
@@ -13,14 +13,14 @@ function createGalleryItems(arr) {
     </a>
  </li>`;
     })
-    .join("");
+    .join('');
 }
-const galleryContainer = document.querySelector(".gallery");
+const galleryContainer = document.querySelector('.gallery');
 
 const galleryMarkup = createGalleryItems(galleryItems);
-galleryContainer.insertAdjacentHTML("beforeend", galleryMarkup);
-var lightbox = new SimpleLightbox(".gallery a", {});
+galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
+var lightbox = new SimpleLightbox('.gallery a', {});
 
-lightbox.options.captionData = "title";
+lightbox.options.captionData = 'title';
 lightbox.options.captionDelay = 250;
-lightbox.options.captionPosition = "bottom";
+lightbox.options.captionPosition = 'bottom';
