@@ -8,11 +8,11 @@ const player = new VimeoPlayer(iframe, {
   url: 'https://player.vimeo.com/video/236203659',
   autoplay: true,
 });
-
+let currentTime = 0;
 player.on(
   'timeupdate',
   throttle(function (data) {
-    const currentTime = data.seconds;
+    currentTime = data.seconds;
     const savedCurrentTimeMarkup = localStorage.setItem(
       'videoplayer-current-time',
       currentTime.toString()
