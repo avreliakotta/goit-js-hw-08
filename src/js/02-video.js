@@ -8,7 +8,7 @@ const player = new VimeoPlayer(iframe, {
   url: 'https://player.vimeo.com/video/236203659',
   autoplay: true,
 });
-let currentTime = 0;
+
 player.on(
   'timeupdate',
   throttle(function (data) {
@@ -20,7 +20,8 @@ player.on(
   }, 1000)
 );
 function getSavedCurrentTime() {
-  const savedCurrentTime = localStorage.getItem('videoplayer-current-time');
+  const savedCurrentTime =
+    localStorage.getItem('videoplayer-current-time') || 0;
   if (savedCurrentTime) {
     return Number(savedCurrentTime);
   }
